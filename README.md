@@ -83,14 +83,19 @@ python forecast.py --data-path "Seoul-bicycle-rental-dataset.csv" --artifacts-di
 ```
 
 ## Repository Structure
-
 ```
 ├── src/
 │   ├── data_pipeline.py   # Loading, column normalization, schema validation
 │   ├── features.py        # Lag, rolling, cyclical, and interaction features
 │   ├── modeling.py        # Candidate model definitions
 │   └── evaluation.py      # MAE/RMSE/sMAPE, walk-forward, holdout evaluation
-├── artifacts/             # Pre-generated metrics, predictions, and plots
+├── artifacts/             
+│   ├── holdout_actual_vs_predicted.png
+│   ├── holdout_error_by_hour.png
+│   ├── recursive_forecast_last_window.png
+│   ├── holdout_metrics.csv
+│   ├── walk_forward_metrics.csv
+│   └── recursive_forecast_last_window.csv
 ├── train.py               # Full training and evaluation script
 ├── forecast.py            # Recursive 24-hour forecast simulation
 └── requirements.txt
